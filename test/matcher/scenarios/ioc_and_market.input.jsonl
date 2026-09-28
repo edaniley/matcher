@@ -1,0 +1,16 @@
+# IOC and market orders never rest; unfilled remainder is canceled.
+{"op":"new","id":1,"account":1,"side":"sell","price":100,"size":2}
+{"op":"new","id":2,"account":1,"side":"sell","price":103,"size":2}
+# IOC buy 101x5: fills 2 @100, remaining 3 canceled (103 beyond limit)
+{"op":"new","id":3,"account":2,"side":"buy","tif":"ioc","price":101,"size":5}
+# IOC with no crossing liquidity: fully canceled
+{"op":"new","id":4,"account":2,"side":"buy","tif":"ioc","price":99,"size":1}
+# Market buy 5: fills 2 @103, remaining 3 canceled; book side emptied
+{"op":"new","id":5,"account":2,"side":"buy","type":"market","tif":"ioc","size":5}
+# Market on empty book
+{"op":"new","id":6,"account":2,"side":"sell","type":"market","tif":"ioc","size":1}
+# Market GTC is invalid
+{"op":"new","id":7,"account":2,"side":"sell","type":"market","tif":"gtc","size":1}
+{"op":"depth"}
+{"op":"status","id":3}
+{"op":"status","id":5}

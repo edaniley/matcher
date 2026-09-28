@@ -1,0 +1,17 @@
+{"seq":1,"event":"accepted","id":1}
+{"seq":2,"event":"rested","id":1,"price":50,"decimals":0,"remaining":10}
+{"seq":3,"event":"accepted","id":2}
+{"seq":4,"event":"rested","id":2,"price":50,"decimals":0,"remaining":10}
+{"seq":5,"event":"accepted","id":3}
+{"seq":6,"event":"trade","maker":1,"taker":3,"maker_account":1,"taker_account":3,"taker_side":"sell","price":50,"decimals":0,"qty":4,"maker_remaining":6,"taker_remaining":0}
+{"query":"status","id":1,"status":"partially_filled","account":1,"side":"buy","type":"limit","tif":"gtc","price":50,"decimals":0,"size":10,"filled":4,"remaining":6}
+{"seq":7,"event":"accepted","id":4}
+{"seq":8,"event":"trade","maker":1,"taker":4,"maker_account":1,"taker_account":3,"taker_side":"sell","price":50,"decimals":0,"qty":6,"maker_remaining":0,"taker_remaining":2}
+{"seq":9,"event":"trade","maker":2,"taker":4,"maker_account":2,"taker_account":3,"taker_side":"sell","price":50,"decimals":0,"qty":2,"maker_remaining":8,"taker_remaining":0}
+{"query":"status","id":1,"status":"filled","account":1,"side":"buy","type":"limit","tif":"gtc","price":50,"decimals":0,"size":10,"filled":10,"remaining":0}
+{"query":"status","id":2,"status":"partially_filled","account":2,"side":"buy","type":"limit","tif":"gtc","price":50,"decimals":0,"size":10,"filled":2,"remaining":8}
+{"seq":10,"event":"accepted","id":5}
+{"seq":11,"event":"trade","maker":2,"taker":5,"maker_account":2,"taker_account":4,"taker_side":"sell","price":50,"decimals":0,"qty":8,"maker_remaining":0,"taker_remaining":12}
+{"seq":12,"event":"rested","id":5,"price":49,"decimals":0,"remaining":12}
+{"query":"depth","bids":[],"asks":[{"price":49,"decimals":0,"qty":12,"orders":1}]}
+{"query":"status","id":5,"status":"partially_filled","account":4,"side":"sell","type":"limit","tif":"gtc","price":49,"decimals":0,"size":20,"filled":8,"remaining":12}

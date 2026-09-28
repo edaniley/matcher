@@ -1,0 +1,10 @@
+{"seq":1,"event":"accepted","id":1}
+{"seq":2,"event":"rested","id":1,"price":100,"decimals":0,"remaining":2}
+{"seq":3,"event":"accepted","id":2}
+{"seq":4,"event":"rested","id":2,"price":100,"decimals":0,"remaining":5}
+{"seq":5,"event":"accepted","id":3}
+{"seq":6,"event":"rested","id":3,"price":100,"decimals":0,"remaining":5}
+{"seq":7,"event":"accepted","id":4}
+{"seq":8,"event":"trade","maker":1,"taker":4,"maker_account":1,"taker_account":7,"taker_side":"buy","price":100,"decimals":0,"qty":2,"maker_remaining":0,"taker_remaining":8}
+{"seq":9,"event":"canceled","id":4,"remaining":8,"reason":"self_trade"}
+{"query":"depth","bids":[],"asks":[{"price":100,"decimals":0,"qty":10,"orders":2}]}

@@ -1,0 +1,13 @@
+# Prices are value + decimals. The same numeric price in different scales is one level,
+# with normal time priority. Trades report the maker's representation.
+{"op":"new","id":1,"account":1,"side":"sell","price":10010,"decimals":2,"size":2}
+{"op":"new","id":2,"account":2,"side":"sell","price":1001,"decimals":1,"size":3}
+{"op":"new","id":3,"account":3,"side":"sell","price":10001,"decimals":2,"size":1}
+{"op":"depth"}
+# Buy 100.100 (decimals 3) x4: first 100.01 (#3), then #1 at 100.10, then 1 of #2
+{"op":"new","id":4,"account":9,"side":"buy","price":100100,"decimals":3,"size":4}
+# 100 < 100.01: no cross, rests
+{"op":"new","id":5,"account":9,"side":"buy","price":100,"size":1}
+{"op":"depth"}
+# decimals above 18 rejected
+{"op":"new","id":6,"account":9,"side":"buy","price":1,"decimals":19,"size":1}

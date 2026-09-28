@@ -1,0 +1,16 @@
+# Engine-level rejects (valid JSON, invalid order) and harness-level errors (bad input).
+{"op":"new","id":1,"account":1,"side":"buy","price":100,"size":0}
+{"op":"new","id":2,"account":1,"side":"buy","price":0,"size":1}
+{"op":"new","id":3,"account":1,"side":"buy","price":-5,"size":1}
+{"op":"new","id":4,"account":1,"side":"buy","price":100,"size":1}
+{"op":"new","id":4,"account":1,"side":"sell","price":100,"size":1}
+{"op":"new","id":2,"account":1,"side":"buy","price":100,"size":1}
+{"op":"status","id":2}
+# harness errors: processing continues after each
+this is not json
+{"op":"new","id":10,"account":1,"side":"buy","size":1}
+{"op":"new","id":11,"account":1,"side":"hold","price":1,"size":1}
+{"op":"new","id":12,"account":1,"side":"buy","price":1,"size":1,"extra":true}
+{"op":"launch"}
+{"op":"config","stp":"cancel_both"}
+{"op":"top"}

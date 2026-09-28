@@ -1,0 +1,7 @@
+# snapshot mode "top": a top-of-book snapshot follows every order / cancel
+{"op":"config","symbol":"SILVER","snapshot":"top"}
+{"op":"new","id":1,"account":1,"side":"buy","price":2950,"decimals":2,"size":10}
+{"op":"new","id":2,"account":2,"side":"sell","price":2960,"decimals":2,"size":4}
+{"op":"new","id":3,"account":3,"side":"sell","price":2950,"decimals":2,"size":4}
+{"op":"cancel","id":2}
+{"op":"top"}

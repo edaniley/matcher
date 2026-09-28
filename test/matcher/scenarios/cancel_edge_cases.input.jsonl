@@ -1,0 +1,25 @@
+# Cancel semantics. The engine is single threaded: a cancel is applied entirely before or
+# entirely after any match, never in the middle.
+{"op":"new","id":1,"account":1,"side":"sell","price":100,"size":10}
+{"op":"new","id":2,"account":2,"side":"sell","price":100,"size":5}
+# Partial fill of #1, then cancel: reports remaining 6, fills preserved
+{"op":"new","id":3,"account":3,"side":"buy","price":100,"size":4}
+{"op":"cancel","id":1}
+{"op":"status","id":1}
+# Cancel after full fill: too late
+{"op":"new","id":4,"account":3,"side":"buy","price":100,"size":5}
+{"op":"cancel","id":2}
+# Cancel twice, cancel unknown
+{"op":"new","id":5,"account":1,"side":"buy","price":90,"size":1}
+{"op":"cancel","id":5}
+{"op":"cancel","id":5}
+{"op":"cancel","id":999}
+# Cancel of IOC taker (never rests)
+{"op":"new","id":6,"account":1,"side":"buy","tif":"ioc","price":90,"size":1}
+{"op":"cancel","id":6}
+# Cancel arriving before a match removes liquidity from the queue
+{"op":"new","id":7,"account":1,"side":"sell","price":100,"size":1}
+{"op":"new","id":8,"account":2,"side":"sell","price":100,"size":1}
+{"op":"cancel","id":7}
+{"op":"new","id":9,"account":3,"side":"buy","price":100,"size":1}
+{"op":"depth"}

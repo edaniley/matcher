@@ -1,0 +1,12 @@
+{"seq":1,"event":"accepted","id":1}
+{"seq":2,"event":"rested","id":1,"price":2950,"decimals":2,"remaining":10}
+{"snapshot":"top","bid":{"price":2950,"decimals":2,"qty":10,"orders":1},"ask":null}
+{"seq":3,"event":"accepted","id":2}
+{"seq":4,"event":"rested","id":2,"price":2960,"decimals":2,"remaining":4}
+{"snapshot":"top","bid":{"price":2950,"decimals":2,"qty":10,"orders":1},"ask":{"price":2960,"decimals":2,"qty":4,"orders":1}}
+{"seq":5,"event":"accepted","id":3}
+{"seq":6,"event":"trade","maker":1,"taker":3,"maker_account":1,"taker_account":3,"taker_side":"sell","price":2950,"decimals":2,"qty":4,"maker_remaining":6,"taker_remaining":0}
+{"snapshot":"top","bid":{"price":2950,"decimals":2,"qty":6,"orders":1},"ask":{"price":2960,"decimals":2,"qty":4,"orders":1}}
+{"seq":7,"event":"canceled","id":2,"remaining":4,"reason":"user_requested"}
+{"snapshot":"top","bid":{"price":2950,"decimals":2,"qty":6,"orders":1},"ask":null}
+{"query":"top","bid":{"price":2950,"decimals":2,"qty":6,"orders":1},"ask":null}

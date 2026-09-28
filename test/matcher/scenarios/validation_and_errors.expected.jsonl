@@ -1,0 +1,15 @@
+{"seq":1,"event":"rejected","id":1,"reason":"invalid_size"}
+{"seq":2,"event":"rejected","id":2,"reason":"invalid_price"}
+{"seq":3,"event":"rejected","id":3,"reason":"invalid_price"}
+{"seq":4,"event":"accepted","id":4}
+{"seq":5,"event":"rested","id":4,"price":100,"decimals":0,"remaining":1}
+{"seq":6,"event":"rejected","id":4,"reason":"duplicate_order_id"}
+{"seq":7,"event":"rejected","id":2,"reason":"duplicate_order_id"}
+{"query":"status","id":2,"status":"rejected","account":1,"side":"buy","type":"limit","tif":"gtc","price":0,"decimals":0,"size":1,"filled":0,"remaining":0}
+{"error":"invalid JSON: syntax error","line":10}
+{"error":"missing field 'price' for limit order","line":11}
+{"error":"invalid value 'hold' for 'side'","line":12}
+{"error":"unknown field 'extra'","line":13}
+{"error":"unknown op 'launch'","line":14}
+{"error":"config must precede all other commands","line":15}
+{"query":"top","bid":{"price":100,"decimals":0,"qty":1,"orders":1},"ask":null}

@@ -1,0 +1,9 @@
+# Self-trade prevention, cancel_oldest: resting own order is canceled, incoming continues.
+{"op":"config","stp":"cancel_oldest"}
+{"op":"new","id":1,"account":1,"side":"sell","price":100,"size":2}
+{"op":"new","id":2,"account":7,"side":"sell","price":100,"size":5}
+{"op":"new","id":3,"account":1,"side":"sell","price":100,"size":5}
+# Account 7 buys 10: trades 2 with #1, cancels own #2, trades 5 with #3, rests 3
+{"op":"new","id":4,"account":7,"side":"buy","price":100,"size":10}
+{"op":"depth"}
+{"op":"status","id":2}

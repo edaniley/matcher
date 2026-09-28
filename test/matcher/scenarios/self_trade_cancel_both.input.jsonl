@@ -1,0 +1,8 @@
+# Self-trade prevention, cancel_both: resting own order and incoming order are both canceled.
+{"op":"config","stp":"cancel_both"}
+{"op":"new","id":1,"account":1,"side":"sell","price":100,"size":2}
+{"op":"new","id":2,"account":7,"side":"sell","price":100,"size":5}
+{"op":"new","id":3,"account":1,"side":"sell","price":100,"size":5}
+# Account 7 buys 10: trades 2 with #1, then #2 and #4 canceled; #3 untouched
+{"op":"new","id":4,"account":7,"side":"buy","price":100,"size":10}
+{"op":"depth"}
